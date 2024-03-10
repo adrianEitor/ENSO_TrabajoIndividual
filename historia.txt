@@ -38,3 +38,10 @@ git push --tags origin main
 git add historia.txt
 git commit -m "Actualizado historia.txt"
 git push origin main
+
+git pull origin main
+git diff historia.txt
+
+git add historia.txt
+git commit -m "Commit co ficheiro historia actualizado antes de facer un push ao repositorio remoto"
+git push origin master
