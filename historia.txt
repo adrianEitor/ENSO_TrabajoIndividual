@@ -24,3 +24,17 @@ git log --oneline
 git reset 2b6be9e
 git add .
 git commit -m "Actualizada versión 2 a 3 e plantillas actualizadas"
+
+git add historia.txt
+git commit -m "Actualizar no repositorio o ficheiro historia.txt"
+
+git tag -a R3 -m "Versión cos documentos coa última versión"
+
+git remote add origin https://github.com/adrianEitor/ENSO_TrabajoIndividual.git
+git branch -M main
+git push -u origin main
+git push --tags origin main
+
+git add historia.txt
+git commit -m "Actualizado historia.txt"
+git push origin main
