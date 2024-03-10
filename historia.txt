@@ -1,47 +1,98 @@
+# Inicializa un novo repositorio Git no directorio actual coa estrutura indicada no enunciado.
 git init
 
+# Engade todos os arquivos que se indican á área de preparación (staging area).
 git add .
-git commit -m "Primer commit: añadida versión inicial de la descripción del proceso de control de cambios y plantillas en blanco"
 
+# Confirma os cambios na área de preparación cunha mensaxe descritiva.
+git commit -m "Primeiro commit: engadida versión inicial da descrición do proceso de control de cambios e plantillas en branco"
+
+# Crea unha etiqueta (tag) chamada "R1" para marcar o estado inicial do repositorio.
 git tag -a R1 -m "Estado inicial"
 
-git branch Mejoras
-git switch Mejoras
+# Crea unha nova rama chamada "Melloras" e cámbiase a ela.
+git branch Melloras
+git switch Melloras
+
+# Engade o arquivo pdf e actualízase o documento existente á versión 2 na área de preparación na rama "Melloras".
 git add .
+
+# Confirma os cambios na rama "Melloras" cunha mensaxe descritiva.
 git commit -m "Engádese pdf de propostas de de mellora, e modifícase documento de word"
 
+# Cambia de volta á rama principal "main".
 git switch main
-git merge Mejoras
-git branch -d Mejoras
 
+# Fai a fusión dos cambios da rama "Melloras" na rama "main".
+git merge Melloras
+
+# Elimina a rama "Melloras" despois de fusionala.
+git branch -d Melloras
+
+# Confirma a eliminación do arquivo pdf de propostas de mellora.
 git commit -m "Borrado pdf con propostas de mellora"
-git tag -a R2 -m "Versión con rama Mejoras fusionada e pdf de melloras eliminado"
 
+# Crea unha etiqueta (tag) chamada "R2" para marcar a versión despois de fusionar a rama "Melloras".
+git tag -a R2 -m "Versión con rama Melloras fusionada e pdf de melloras eliminado"
+
+# Engade todos os arquivos modificados ou novos á área de preparación (despois de cambiar a versión 2 pola 3 na rama principal).
 git add .
-git commit -m "Cambiada versión 2 por versión 3 del proceso"
 
+# Confirma os cambios cunha mensaxe descritiva.
+git commit -m "Cambiada versión 2 por versión 3 do proceso"
+
+# Amosa o historial de confirmacións nunha liña.
 git log --oneline
+
+# Restablece o repositorio ao estado anterior.
 git reset 2b6be9e
+
+# Engade as plantillas actualizadas á área de preparación.
 git add .
+
+# Confirma os cambios cunha mensaxe descritiva.
 git commit -m "Actualizada versión 2 a 3 e plantillas actualizadas"
 
+# Engade o arquivo "historia.txt" á área de preparación.
 git add historia.txt
+
+# Confirma os cambios cunha mensaxe descritiva.
 git commit -m "Actualizar no repositorio o ficheiro historia.txt"
 
+# Crea unha etiqueta (tag) chamada "R3" para marcar a versión actualizada.
 git tag -a R3 -m "Versión cos documentos coa última versión"
 
+# Engade un repositorio remoto chamado "origin" coa URL proporcionada.
 git remote add origin https://github.com/adrianEitor/ENSO_TrabajoIndividual.git
+
+# Renomea a rama principal de "master" a "main".
 git branch -M main
+# Empurra os cambios locais á rama principal do repositorio remoto.
 git push -u origin main
+
+# Empurra todas as etiquetas (tags) locais ao repositorio remoto.
 git push --tags origin main
 
+# Engade o arquivo "historia.txt" á área de preparación.
 git add historia.txt
+
+# Confirma os cambios cunha mensaxe descritiva.
 git commit -m "Actualizado historia.txt"
+
+# Empurra os cambios locais na rama principal ao repositorio remoto.
 git push origin main
 
+# Recupera e fai a fusión dos cambios desde a rama principal do repositorio remoto.
 git pull origin main
+
+# Amosa as diferenzas entre o arquivo "historia.txt" no directorio de traballo e a versión no repositorio.
 git diff historia.txt
 
+# Engade o arquivo "historia.txt" á área de preparación.
 git add historia.txt
+
+# Confirma os cambios cunha mensaxe descritiva.
 git commit -m "Commit co ficheiro historia actualizado antes de facer un push ao repositorio remoto"
-git push origin master
+
+# Empurra os cambios locais na rama principal ao repositorio remoto.
+git push origin main
