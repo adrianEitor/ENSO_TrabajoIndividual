@@ -1,0 +1,26 @@
+git init
+
+git add .
+git commit -m "Primer commit: añadida versión inicial de la descripción del proceso de control de cambios y plantillas en blanco"
+
+git tag -a R1 -m "Estado inicial"
+
+git branch Mejoras
+git switch Mejoras
+git add .
+git commit -m "Engádese pdf de propostas de de mellora, e modifícase documento de word"
+
+git switch main
+git merge Mejoras
+git branch -d Mejoras
+
+git commit -m "Borrado pdf con propostas de mellora"
+git tag -a R2 -m "Versión con rama Mejoras fusionada e pdf de melloras eliminado"
+
+git add .
+git commit -m "Cambiada versión 2 por versión 3 del proceso"
+
+git log --oneline
+git reset 2b6be9e
+git add .
+git commit -m "Actualizada versión 2 a 3 e plantillas actualizadas"
