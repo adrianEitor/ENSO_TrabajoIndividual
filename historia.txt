@@ -10,24 +10,27 @@ git commit -m "Primeiro commit: engadida versión inicial da descrición do proc
 # Crea unha etiqueta (tag) chamada "R1" para marcar o estado inicial do repositorio.
 git tag -a R1 -m "Estado inicial"
 
-# Crea unha nova rama chamada "Melloras" e cámbiase a ela.
-git branch Melloras
-git switch Melloras
+# Crea unha nova rama chamada "Mejoras" e cámbiase a ela.
+git branch Mejoras
+git switch Mejoras
 
-# Engade o arquivo pdf e actualízase o documento existente á versión 2 na área de preparación na rama "Melloras".
+# Engadimos o arquivo pdf e actualimos o documento existente á versión 2 na área de preparación na rama "Mejoras".
 git add .
 
-# Confirma os cambios na rama "Melloras" cunha mensaxe descritiva.
+# Confirma os cambios na rama "Mejoras" cunha mensaxe descritiva.
 git commit -m "Engádese pdf de propostas de de mellora, e modifícase documento de word"
 
 # Cambia de volta á rama principal "main".
 git switch main
 
 # Fai a fusión dos cambios da rama "Melloras" na rama "main".
-git merge Melloras
+git merge Mejoras
 
-# Elimina a rama "Melloras" despois de fusionala.
-git branch -d Melloras
+# Elimina a rama "Mejoras" despois de fusionala.
+git branch -d Mejoras
+
+# Eliminamos o documento pdf e engadimos á área de preparación.
+git add . 
 
 # Confirma a eliminación do arquivo pdf de propostas de mellora.
 git commit -m "Borrado pdf con propostas de mellora"
@@ -35,7 +38,7 @@ git commit -m "Borrado pdf con propostas de mellora"
 # Crea unha etiqueta (tag) chamada "R2" para marcar a versión despois de fusionar a rama "Melloras".
 git tag -a R2 -m "Versión con rama Melloras fusionada e pdf de melloras eliminado"
 
-# Engade todos os arquivos modificados ou novos á área de preparación (despois de cambiar a versión 2 pola 3 na rama principal).
+# Cambiamos a versión 2 pola 3 e engadimos á área de preparación.
 git add .
 
 # Confirma os cambios cunha mensaxe descritiva.
@@ -67,6 +70,7 @@ git remote add origin https://github.com/adrianEitor/ENSO_TrabajoIndividual.git
 
 # Renomea a rama principal de "master" a "main".
 git branch -M main
+
 # Empurra os cambios locais á rama principal do repositorio remoto.
 git push -u origin main
 
